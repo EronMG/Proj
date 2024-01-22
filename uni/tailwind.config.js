@@ -10,6 +10,7 @@ export const theme = {
             middle: '#3EC655',
             ligth: '#7AE15E',
             red: 'F00',
+            line: 'rgba(249, 255, 252, 0.30)'
         },
         fontFamily: {
             gil: ['Gilroy'],

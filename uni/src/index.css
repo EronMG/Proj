@@ -26,3 +26,62 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.main {
+  background-image: url('./assets/Main.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.second{
+  background-image:url('./assets/Second.png');
+    background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.button{
+  border-radius: 5px;
+border: 0.5px solid rgba(255, 255, 255, 0.22);
+background: var(--, rgba(255, 255, 255, 0.18));
+
+/* ДЛЯ КНОПКИ */
+backdrop-filter: blur(14.5px);
+}
+
+.block{
+  border-radius: 10px;
+border: 1px solid rgba(255, 255, 255, 0.11);
+background: rgba(82, 194, 52, 0.14);
+box-shadow: 0px 4px 70px 0px rgba(82, 194, 52, 0.09);
+}
+
+.blockInf{
+  border-radius: 5px;
+border: 1px solid rgba(255, 255, 255, 0.07);
+background: rgba(255, 255, 255, 0.08);
+backdrop-filter: blur(17.5px);
+}
+
+.plash{
+  border-radius: 5px;
+border: 1px solid rgba(82, 194, 52, 0.43);
+background: rgba(255, 255, 255, 0.07);
+
+/* ДЛЯ МАЛЕНЬКОЙ ПЛАШКИ */
+backdrop-filter: blur(17.5px);
+}
+
+.persons{
+background: linear-gradient(180deg, rgba(82, 194, 52, 0.00) -22.18%, rgba(82, 194, 52, 0.30) 121.94%);
+}
+
+.fight{
+  border-radius: 10px;
+border: 1px solid  rgba(82, 194, 52, 0.08);
+background: linear-gradient(180deg, rgba(82, 194, 52, 0.00) -22.18%, rgba(82, 194, 52, 0.30) 121.94%);
+
+/* для плашки */
+box-shadow: 0px 4px 70px 0px rgba(82, 194, 52, 0.09);
+}
