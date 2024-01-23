@@ -33,7 +33,7 @@ const Login = () => {
             />
           </div>
           <Link
-            to="/main"
+            to="/form"
             className="text-white text-xl font-gilSemi flex items-center justify-center w-[240px] py-3 border-[1px] border-line rounded-full mt-4"
           >
             Sign in

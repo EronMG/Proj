@@ -28,6 +28,12 @@ code {
     monospace;
 }
 
+.hit{
+  border-radius: 5px;
+border: 1px solid rgba(255, 255, 255, 0.51);
+background: rgba(255, 255, 255, 0.07); 
+}
+
 .main {
   background-image: url('./assets/Main.png');
   background-size: cover;
@@ -42,6 +48,14 @@ code {
   background-position: center;
 }
 
+
+.third{
+  background-image:url('./assets/third.png');
+    background-size: cover;
+  background-repeat: no-repeat;
+  height:100vh;
+}
+
 .last{
   background-image:url('./assets/Second.png');
     background-size: cover;
@@ -52,7 +66,7 @@ code {
 .button{
   border-radius: 5px;
 border: 0.5px solid rgba(255, 255, 255, 0.22);
-background: var(--, rgba(255, 255, 255, 0.18));
+background:  rgba(255, 255, 255, 0.18);
 
 /* ДЛЯ КНОПКИ */
 backdrop-filter: blur(14.5px);
