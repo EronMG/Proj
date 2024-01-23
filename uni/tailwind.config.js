@@ -9,8 +9,9 @@ export const theme = {
             primary: '#52C234',
             middle: '#3EC655',
             ligth: '#7AE15E',
-            red: 'F00',
-            line: 'rgba(249, 255, 252, 0.30)'
+            red: '#F00',
+            line: 'rgba(249, 255, 252, 0.30)',
+            gun: 'rgba(255, 255, 255, 0.57)',
         },
         fontFamily: {
             gil: ['Gilroy'],

@@ -1,7 +1,21 @@
 import React from "react";
 
-const Partners = () => {
-  return <div>Partners</div>;
+const Partners = ({ className, title }) => {
+  return (
+    <div className={className}>
+      <h2 className="text-primary text-[32px] text-center font-jura font-semibold ">
+        {title}
+      </h2>
+      <span className="text-[20px] font-gil text-white text-center">
+        Заработай с помощью советника сам, порекомендуй другу и получи 10%
+        процентов от продажи каждого торгового советника
+      </span>
+      <span className="text-gun font-gil text-[14px]">
+        *Бонус выплачивается проектом разово за каждого приглашенного
+        пользователя
+      </span>
+    </div>
+  );
 };
 
 export default Partners;
