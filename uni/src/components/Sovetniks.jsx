@@ -183,7 +183,7 @@ const Sovetniks = ({ className, title }) => {
                     onClick={closeModal}
                     src={close}
                     alt="close"
-                    className="w-[40px] h-[40px] cursor-pointer sm:absolute right-3 top-3"
+                    className="w-[40px] h-[40px] cursor-pointer sm:absolute right-0 top-0"
                   />
                 </div>
                 <div className="flex text-white md:text-[18px] md:pt-8">
