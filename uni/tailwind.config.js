@@ -20,9 +20,11 @@ export const theme = {
         },
     },
     screens: {
+        mm: '400px',
         sm: "768px",
         md: "1060px",
-        xl: "1440",
+        xl: "1440px",
+        bg: '1520px',
     },
 };
 export const plugins = [];

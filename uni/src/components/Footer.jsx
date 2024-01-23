@@ -32,7 +32,7 @@ const links = [
 const Footer = ({ className }) => {
   return (
     <div className={className}>
-      <div className="flex justify-center items-center flex-col gap-10">
+      <div className="flex justify-center items-center flex-col gap-10 md:items-start">
         <img src={logo} alt="logo" />
         <div className="flex items-center gap-10">
           <img src={min} alt="icon" />

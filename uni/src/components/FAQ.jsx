@@ -55,7 +55,9 @@ const FAQ = ({ className, title }) => {
 
   return (
     <div className={className}>
-      <h2 className="text-white font-jura font-bold text-[32px]">{title}</h2>
+      <h2 className="text-white font-jura font-bold text-[32px] md:text-[48px]">
+        {title}
+      </h2>
       <div className="flex flex-col gap-7 md:hidden">
         {all === true
           ? quest.map((item) => (
@@ -96,7 +98,7 @@ const FAQ = ({ className, title }) => {
         {quest.map((item) => (
           <div key={item.id} className="flex flex-col gap10">
             <div className="flex justify-between items-start border-b-[0.5px] border-gun pb-2">
-              <span className="text-white text-[16px] font-gilSemi md:text-xl">
+              <span className="text-white text-[16px] font-gilSemi md:text-xl xl:text-[32px]">
                 {item.name}
               </span>
               <img src={close} alt="close" className="w-7 h-7" />

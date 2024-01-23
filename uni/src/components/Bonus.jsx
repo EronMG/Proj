@@ -49,7 +49,7 @@ const plash = [
 const Bonus = ({ className, title }) => {
   return (
     <div className={className}>
-      <div className="block pb-[33px] pt-8 px-4 w-full md:w-[600px]">
+      <div className="block pb-[33px] pt-8 px-4 w-full md:w-[600px]  bg:h-[538px]">
         <h2 className="text-[32px] text-white font-jura font-bold md:text-[48px]">
           Бонусы
         </h2>
@@ -60,7 +60,7 @@ const Bonus = ({ className, title }) => {
                 key={item.id}
                 className={`plash ${
                   item.id === "1" || item.id === "2"
-                    ? "max-w-[265px] md:w-[180px]"
+                    ? "max-w-[265px] md:w-[180px] xl:w-[268px]"
                     : "max-w-[167px]"
                 } items-center justify-center py-[15px] text-white font-gil text-[14px] px-6`}
               >
@@ -71,27 +71,27 @@ const Bonus = ({ className, title }) => {
           <img src={robot} alt="robot" className=" object-contain" />
         </div>
       </div>
-      <div className="block max-w-[880px] px-4 py-6 md:w-[400px]">
-        <h2 className="text-[32px] font-jura font-bold text-white md:text-[48px]">
+      <div className="block max-w-[880px] px-4 py-6 md:w-[400px] xl:w-[550px] xl:px-1  bg:w-[880px]  bg:h-[538px]">
+        <h2 className="text-[32px] font-jura font-bold text-white md:text-[48px] xl:pl-3">
           {title}
         </h2>
-        <div className=" flex flex-wrap pt-10 gap-y-8 gap-x-10 justify-center">
+        <div className=" flex flex-wrap pt-10 gap-y-8 gap-x-10 justify-center xl:items-center xl:gap-x-4 xl:gap-y-4">
           {sov.map((item) => (
             <div
               key={item.id}
-              className={`blockInf flex flex-col gap-4 h-fit py-4 px-2`}
+              className={`blockInf flex flex-col gap-4 h-fit py-4 px-2 bg:w-[380px] bg:gap-y-8 bg:h-[168px] bg:pl-8 bg:py-1`}
             >
               <img
                 src={item.icon}
                 alt={item.id}
-                className="w-[35px] h-[35px] object-fit"
+                className="w-[35px] h-[35px] object-fit bg:w-[56px]  bg:h-[56px]"
               />
               <span
                 className={`text-[14px] text-white font-gil ${
                   item.id === "1" || item.id === "3"
                     ? "max-w-[284px]"
                     : "max-w-[224px]"
-                }`}
+                } bg:text-base `}
               >
                 {item.title}
               </span>

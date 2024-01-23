@@ -116,11 +116,69 @@ const firstThreeCoins = coins.slice(0, 3);
 const Active = ({ className, title }) => {
   return (
     <div className={className}>
-      <h2 className="text-white text-[32px] text-center font-jura font-bold ">
+      <h2 className="text-white text-[32px] text-center font-jura font-bold xl:text-[48px] ">
         {title}
       </h2>
-      <div className="block">
-        <div className=" mt-8 px-4 py-5 flex flex-col gap-4 md:hidden">
+      <div className="block bg:py-[35px]">
+        <div className="hidden xl:flex xl:flex-col gap-8">
+          <div className="flex gap-4 justify-center">
+            {COINS.map((item) => (
+              <img src={item.icon} alt="icon" key={item.id} />
+            ))}
+          </div>
+          <div className="flex flex-col gap-4 ml-10">
+            <div className="flex gap-[96px] justify-end pr-[5px]">
+              <p className="text-white font-gilSemi text-[18px]">Цена в $</p>
+              <p className="text-white font-gilSemi text-[18px]">Цена в ₽</p>
+              <p className="text-white font-gilSemi text-[18px]">7 дней</p>
+              <p className="text-white font-gilSemi text-[18px]">
+                Рыночная капитализация
+              </p>
+              <p className="text-white font-gilSemi text-[18px]">
+                Объем торгов за 24 часа
+              </p>
+            </div>
+            <div className="flex flex-col gap-4">
+              {coins.map((item) => (
+                <div key={item.id} className="flex items-center gap-[205px]">
+                  <div className="flex gap-[24px] items-center">
+                    <img src={item.icon} alt="icon" />
+                    <div className="flex gap-[15px] w-[181px]">
+                      <p className="text-white font-gil text-base">
+                        {item.name}
+                      </p>
+                      <span className="text-[#ACACAC] font-gil text-[16px]">
+                        {item.title}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex justify-start">
+                    <span className="text-gray-400 font-gil text-[16px] w-[73px]">
+                      {" "}
+                      {item.dollar}
+                    </span>
+                    <span className="text-gray-400 font-gil text-[16px] w-[102px] ml-[96px]">
+                      {" "}
+                      {item.rub}
+                    </span>
+                    <span className="text-red font-gil text-[16px] w-[69px] ml-[68px] flex gap-2">
+                      <img src={arrow} alt="arrow" /> {item.procent}
+                    </span>
+                    <span className="text-gray-400 font-gil text-[16px] w-[122px] ml-[80px]">
+                      {" "}
+                      {item.cap}
+                    </span>
+                    <span className="text-gray-400 font-gil text-[16px] w-[115px] ml-[194px]">
+                      {" "}
+                      {item.hourd}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className=" mt-8 px-4 py-5 flex flex-col gap-4 md:hidden xl:hidden">
           {firstThreeCoins.map((item) => (
             <div
               key={item.id}
@@ -184,14 +242,14 @@ const Active = ({ className, title }) => {
             </div>
           ))}
         </div>
-        <div className=" mt-8 px-4 py-5  flex-col gap-4 hidden md:flex ">
-          <div className="flex gap-3">
+        <div className=" mt-8 px-4 py-5  flex-col gap-4 hidden md:flex  xl:hidden">
+          <div className="flex gap-3 justify-center">
             {COINS.map((item) => (
               <img
                 src={item.icon}
                 alt="icon"
                 key={item.id}
-                className="w-[155px]"
+                className="w-[155px] xl:w-[180px]"
               />
             ))}
           </div>

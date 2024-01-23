@@ -43,7 +43,7 @@ const slice = sov.slice(0, 3);
 const Sovet = ({ className, title }) => {
   return (
     <div className={className}>
-      <h2 className="text-white text-[30px] font-jura font-bold text-center">
+      <h2 className="text-white text-[30px] font-jura font-bold text-center xl:text-5xl">
         {title}
       </h2>
       <div className="flex flex-col gap-4 sm:hidden">
@@ -73,12 +73,12 @@ const Sovet = ({ className, title }) => {
         {sov.map((item) => (
           <div
             key={item.id}
-            className={`blockInf flex flex-col gap-4  py-2 px-2 sm:w-[300px] h-[175px]`}
+            className={`blockInf flex flex-col gap-4  py-2 px-2 sm:w-[300px] h-[175px] xl:w-[360px]`}
           >
             <img
               src={item.icon}
               alt={item.id}
-              className="w-[35px] h-[35px] object-fit"
+              className="w-[35px] h-[35px] object-fit xl:w-[56px] xl:h-[56px]"
             />
             <span className={`text-[16px] text-white font-gil `}>
               {item.title}

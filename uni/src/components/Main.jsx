@@ -20,7 +20,7 @@ const Main = ({ className, title }) => {
   return (
     <div className={className}>
       <div>
-        <h2 className="text-[32px] text-white font-jura font-bold leading-[120%] max-w-[752px] md:text-[48px]">
+        <h2 className="text-[32px] text-white font-jura font-bold leading-[120%] max-w-[752px] md:text-[48px] xl:text-[56px]">
           {title}
         </h2>
         <div className="pt-6 flex flex-col gap-2">
