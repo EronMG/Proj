@@ -48,13 +48,74 @@ const seting = [
   },
 ];
 
+const moneta = [
+  {
+    id: "1",
+    name: "LTC",
+  },
+  {
+    id: "2",
+    name: "ETC",
+  },
+  {
+    id: "3",
+    name: "MATIC",
+  },
+];
+
+const time12 = [
+  {
+    id: "1",
+    name: "15 мин",
+  },
+  {
+    id: "2",
+    name: "30 мин",
+  },
+  {
+    id: "3",
+    name: "1 ч",
+  },
+  {
+    id: "4",
+    name: "2 ч",
+  },
+  {
+    id: "5",
+    name: "4 ч",
+  },
+  {
+    id: "6",
+    name: "6 ч",
+  },
+  {
+    id: "7",
+    name: "8 ч",
+  },
+];
+
 const Settings = () => {
   const [active, setActive] = useState(false);
-
+  const [time, setTime] = useState(false);
+  const [moneta1, setMoneta] = useState(false);
+  const [selectedTime, setSelectedTime] = useState(null);
+  const [selectedCoin, setSelectedCoin] = useState(null);
   const handleActive = useCallback(() => setActive((prev) => !prev), []);
 
+  const handleTimeClick = (item) => {
+    // Handle click on the time block
+    setSelectedTime(item);
+    setTime(!time);
+    // You can perform additional actions if needed
+  };
+  const handleCoinClick = (item) => {
+    // Handle click on the time block
+    setSelectedCoin(item);
+    setMoneta(!moneta1);
+    // You can perform additional actions if needed
+  };
   return (
-    <div className="third flex flex-col items-center">
+    <div className=" third flex flex-col items-center">
       <header className="flex flex-col items-center px-2 pt-10 sm:hidden">
         <img src={logo} alt="logo" />
         <div className="flex gap-10">
@@ -138,49 +199,119 @@ const Settings = () => {
                 <div className="flex justify-center flex-wrap w-full gap-6">
                   {item.id === "1" || item.id === "2" ? (
                     Array.from({ length: 7 }, (_, index) => (
-                      <div
-                        key={index + 1}
-                        className="hit w-[87px] h-[48px] text-gray-500 flex items-center pl-3 font-gil text-[14px]"
-                      >
-                        Ввод
-                      </div>
+                      <input
+                        key={index}
+                        type="text"
+                        name="text"
+                        id="text"
+                        placeholder="Ввод"
+                        className="hit w-[87px] h-[48px] text-white flex items-center pl-3 font-gil text-[14px] focus:outline-primary focus:outline"
+                      />
                     ))
                   ) : item.id === "3" ||
                     item.id === "4" ||
                     item.id === "7" ||
                     item.id === "8" ? (
                     <div className="flex items-center gap-4 text-white text-[20px]">
-                      <div className="hit w-[87px] h-[48px] text-gray-500 flex items-center pl-3 font-gil text-[14px]">
-                        Ввод
-                      </div>{" "}
+                      <input
+                        type="text"
+                        name="text"
+                        id="text"
+                        placeholder="Ввод"
+                        className="hit w-[87px] h-[48px] text-white flex items-center pl-3 font-gil text-[14px]  focus:outline-primary focus:outline"
+                      />
                       %
                     </div>
                   ) : item.id === "9" ? (
                     <div className="flex gap-5">
                       <div className="flex items-center text-white text-[20px] gap-3">
-                        <div className="hit w-[87px] h-[48px] text-gray-500 flex items-center pl-3 font-gil text-[14px]">
-                          Ввод
-                        </div>{" "}
+                        <input
+                          type="text"
+                          name="text"
+                          id="text"
+                          placeholder="Ввод"
+                          className="hit w-[87px] h-[48px] text-white flex items-center pl-3 font-gil text-[14px]  focus:outline-primary focus:outline"
+                        />
                         %
                       </div>
                       <div className="flex items-center text-white text-[20px] gap-3">
-                        <div className="hit w-[87px] h-[48px] text-gray-500 flex items-center pl-3 font-gil text-[14px]">
-                          Ввод
-                        </div>{" "}
+                        <input
+                          type="text"
+                          name="text"
+                          id="text"
+                          placeholder="Ввод"
+                          className="hit w-[87px] h-[48px] text-white flex items-center pl-3 font-gil text-[14px]  focus:outline-primary focus:outline"
+                        />
                         %
                       </div>
                     </div>
                   ) : item.id === "5" ? (
-                    <div className="hit w-[180px] h-[48px] text-white  items-center pl-3 font-gil text-[14px] flex gap-5">
-                      Выбрать время
-                      <img src={line} alt="" />
+                    <div
+                      onClick={() => setTime(!time)}
+                      className={` w-[180px] h-[48px] text-white  items-center pl-3 font-gil text-[14px] z-40 flex gap-5 ${
+                        time === true ? "bg-zinc-900 rounded-xl" : "hit"
+                      }`}
+                    >
+                      {selectedTime !== null
+                        ? selectedTime.name
+                        : "Выбрать время"}
+                      <img
+                        src={line}
+                        alt=""
+                        className={`${time === true ? " rotate-180" : ""}`}
+                      />
                     </div>
                   ) : (
-                    <div className="hit w-[180px] h-[48px] text-white  items-center pl-3 font-gil text-[14px] flex gap-5">
-                      Выбрать монету
-                      <img src={line} alt="" />
+                    <div
+                      onClick={() => setMoneta(!moneta1)}
+                      className={`w-[180px] h-[48px] text-white items-center pl-3 font-gil text-[14px] flex gap-5 z-20 ${
+                        moneta1 === true ? "bg-zinc-900 rounded-xl" : "hit"
+                      }`}
+                    >
+                      {selectedCoin !== null
+                        ? selectedCoin.name
+                        : "Выбрать монету"}
+                      <img
+                        src={line}
+                        alt=""
+                        className={`${moneta1 === true ? " rotate-180" : ""}`}
+                      />
                     </div>
                   )}
+                  <div
+                    className={`${
+                      item.id === "5" ? "relative z-30" : "hidden"
+                    }`}
+                  >
+                    {time && (
+                      <div className="absolute -left-[204px] top-8 bg-black pt-5 pb-2 w-[180px] rounded-xl">
+                        {time12.map((item) => (
+                          <div
+                            onClick={() => handleTimeClick(item)}
+                            key={item.id}
+                            className="text-white font-gil px-2 hover:bg-primary transition-colors cursor-pointer rounded-[8px]"
+                          >
+                            {item.name}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                  <div className={`${item.id === "6" ? "relative" : "hidden"}`}>
+                    {moneta1 && (
+                      <div className="absolute -left-[204px] top-8 bg-black pt-5 pb-2 w-[180px] rounded-xl">
+                        {moneta.map((item) => (
+                          <div
+                            onClick={() => handleCoinClick(item)}
+                            key={item.id}
+                            className="text-white font-gil px-2 hover:bg-primary transition-colors cursor-pointer rounded-[8px]"
+                          >
+                            {item.name}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
@@ -209,22 +340,26 @@ const Settings = () => {
                       <>
                         <div className="flex flex-wrap gap-3 gg:hidden">
                           {Array.from({ length: 7 }, (_, index) => (
-                            <div
-                              key={index + 1}
-                              className="hit w-[87px] h-[48px] text-gray-500 flex items-center pl-3 font-gil text-[14px]"
-                            >
-                              Ввод
-                            </div>
+                            <input
+                              key={index}
+                              type="text"
+                              name="text"
+                              id="text"
+                              placeholder="Ввод"
+                              className="hit w-[87px] h-[48px] text-white flex items-center pl-3 font-gil text-[14px]  focus:outline-primary focus:outline"
+                            />
                           ))}
                         </div>
                         <div className="hidden gap-3 gg:flex">
                           {Array.from({ length: 7 }, (_, index) => (
-                            <div
-                              key={index + 1}
-                              className="hit w-[87px] h-[48px] text-gray-500 flex items-center pl-3 font-gil text-[14px]"
-                            >
-                              Ввод
-                            </div>
+                            <input
+                              key={index}
+                              type="text"
+                              name="text"
+                              id="text"
+                              placeholder="Ввод"
+                              className="hit w-[87px] h-[48px] text-white flex items-center pl-3 font-gil text-[14px]  focus:outline-primary focus:outline"
+                            />
                           ))}
                         </div>
                       </>
@@ -233,37 +368,107 @@ const Settings = () => {
                       item.id === "7" ||
                       item.id === "8" ? (
                       <div className="flex items-center gap-4 text-white text-[20px]">
-                        <div className="hit w-[87px] h-[48px] text-gray-500 flex items-center pl-3 font-gil text-[14px]">
-                          Ввод
-                        </div>{" "}
+                        <input
+                          type="text"
+                          name="text"
+                          id="text"
+                          placeholder="Ввод"
+                          className="hit w-[87px] h-[48px] text-white flex items-center pl-3 font-gil text-[14px]  focus:outline-primary focus:outline"
+                        />
                         %
                       </div>
                     ) : item.id === "9" ? (
                       <div className="flex gap-5">
                         <div className="flex items-center text-white text-[20px] gap-3">
-                          <div className="hit w-[87px] h-[48px] text-gray-500 flex items-center pl-3 font-gil text-[14px]">
-                            Ввод
-                          </div>{" "}
+                          <input
+                            type="text"
+                            name="text"
+                            id="text"
+                            placeholder="Ввод"
+                            className="hit w-[87px] h-[48px] text-white flex items-center pl-3 font-gil text-[14px]  focus:outline-primary focus:outline"
+                          />
                           %
                         </div>
                         <div className="flex items-center text-white text-[20px] gap-3">
-                          <div className="hit w-[87px] h-[48px] text-gray-500 flex items-center pl-3 font-gil text-[14px]">
-                            Ввод
-                          </div>{" "}
+                          <input
+                            type="text"
+                            name="text"
+                            id="text"
+                            placeholder="Ввод"
+                            className="hit w-[87px] h-[48px] text-white flex items-center pl-3 font-gil text-[14px]  focus:outline-primary focus:outline"
+                          />
                           %
                         </div>
                       </div>
                     ) : item.id === "5" ? (
-                      <div className="hit w-[180px] h-[48px] text-white  items-center pl-3 font-gil text-[14px] flex gap-5">
-                        Выбрать время
-                        <img src={line} alt="" />
+                      <div
+                        onClick={() => setTime(!time)}
+                        className={` w-[180px] h-[48px] text-white  items-center pl-3 font-gil text-[14px] z-40 flex gap-5 ${
+                          time === true ? "bg-zinc-900 rounded-xl" : "hit"
+                        }`}
+                      >
+                        {selectedTime !== null
+                          ? selectedTime.name
+                          : "Выбрать время"}
+                        <img
+                          src={line}
+                          alt=""
+                          className={`${time === true ? " rotate-180" : ""}`}
+                        />
                       </div>
                     ) : (
-                      <div className="hit w-[180px] h-[48px] text-white  items-center pl-3 font-gil text-[14px] flex gap-5">
-                        Выбрать монету
-                        <img src={line} alt="" />
+                      <div
+                        onClick={() => setMoneta(!moneta1)}
+                        className={`w-[180px] h-[48px] text-white items-center pl-3 font-gil text-[14px] flex gap-5 z-20 ${
+                          moneta1 === true ? "bg-zinc-900 rounded-xl" : "hit"
+                        }`}
+                      >
+                        {selectedCoin !== null
+                          ? selectedCoin.name
+                          : "Выбрать монету"}
+                        <img
+                          src={line}
+                          alt=""
+                          className={`${moneta1 === true ? " rotate-180" : ""}`}
+                        />
                       </div>
                     )}
+                    <div
+                      className={`${
+                        item.id === "5" ? "relative z-30" : "hidden"
+                      }`}
+                    >
+                      {time && (
+                        <div className="absolute -left-[192px] top-8 bg-black pt-5 pb-2 w-[180px] rounded-xl">
+                          {time12.map((item) => (
+                            <div
+                              onClick={() => handleTimeClick(item)}
+                              key={item.id}
+                              className="text-white font-gil px-2 hover:bg-primary transition-colors cursor-pointer rounded-[8px]"
+                            >
+                              {item.name}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                    <div
+                      className={`${item.id === "6" ? "relative" : "hidden"}`}
+                    >
+                      {moneta1 && (
+                        <div className="absolute -left-[192px] top-8 bg-black pt-5 pb-2 w-[180px] rounded-xl">
+                          {moneta.map((item) => (
+                            <div
+                              onClick={() => handleCoinClick(item)}
+                              key={item.id}
+                              className="text-white font-gil px-2 hover:bg-primary transition-colors cursor-pointer rounded-[8px]"
+                            >
+                              {item.name}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
               ))}
