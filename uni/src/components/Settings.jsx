@@ -135,9 +135,9 @@ const Settings = () => {
                 <span className="text-white font-gilSemi text-[18px] pt-4">
                   {item.name}
                 </span>
-                <div className="flex gap-6">
+                <div className="flex justify-center flex-wrap w-full gap-6">
                   {item.id === "1" || item.id === "2" ? (
-                    Array.from({ length: 3 }, (_, index) => (
+                    Array.from({ length: 7 }, (_, index) => (
                       <div
                         key={index + 1}
                         className="hit w-[87px] h-[48px] text-gray-500 flex items-center pl-3 font-gil text-[14px]"
@@ -207,8 +207,8 @@ const Settings = () => {
                   <div className="flex gap-3">
                     {item.id === "1" || item.id === "2" ? (
                       <>
-                        <div className="flex gap-3 gg:hidden">
-                          {Array.from({ length: 4 }, (_, index) => (
+                        <div className="flex flex-wrap gap-3 gg:hidden">
+                          {Array.from({ length: 7 }, (_, index) => (
                             <div
                               key={index + 1}
                               className="hit w-[87px] h-[48px] text-gray-500 flex items-center pl-3 font-gil text-[14px]"
@@ -279,7 +279,7 @@ const Settings = () => {
                 </button>
                 <div className="flex items-center gap-3 pt-5">
                   <div className="w-[23px] h-[23px] border-[1px] border-white rounded-[5px]"></div>
-                  <span className="text-[14px] font-gil text-white text-end gg:text-[16px]">
+                  <span className="text-[12px] font-gil text-white text-end gg:text-[16px]">
                     Вернуть рекомендованные настройки
                   </span>
                 </div>
@@ -288,7 +288,9 @@ const Settings = () => {
           </div>
         </>
       ) : (
-        <img src={plus} alt="plus" className="mt-5" />
+        <div className="flex justify-start w-full px-[20px]">
+          <img src={plus} alt="plus" className="mt-5" />
+        </div>
       )}
     </div>
   );
