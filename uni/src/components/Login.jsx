@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 const Login = () => {
   return (
     <div className="second h-[100vh] flex items-center justify-center">
-      <div className="blockInf rounded-2xl py-2 px-10">
+      <div className="blockInf rounded-2xl py-2 px-2 ml:px-10">
         <h2 className="text-primary text-3xl font-jura font-bold">Sign in</h2>
-        <div className="flex flex-col gap-4 pt-7 items-center">
-          <div className="flex justify-between gap-16">
+        <div className="flex flex-col gap-4 pt-7 ml:items-center">
+          <div className="flex justify-between ml:gap-16 flex-col ml:flex-row">
             <span className="text-white text-2xl font-juru font-[400]">
               E-mail
             </span>
@@ -20,7 +20,7 @@ const Login = () => {
               placeholder="Email"
             />
           </div>
-          <div className="flex justify-between gap-8">
+          <div className="flex justify-between ml:gap-8 flex-col ml:flex-row">
             <span className="text-white text-2xl font-juru font-[400]">
               Password
             </span>

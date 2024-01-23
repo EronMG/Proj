@@ -21,6 +21,7 @@ export const theme = {
     },
     screens: {
         mm: '400px',
+        ml: '495px',
         sm: "768px",
         md: "1060px",
         xl: "1440px",
