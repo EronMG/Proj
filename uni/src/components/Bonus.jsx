@@ -56,7 +56,10 @@ const Bonus = ({ className, title }) => {
         <div className="pt-9 flex items-center flex-wrap justify-center gap-8 md:justify-normal">
           <div className="flex flex-col gap-6">
             {plash.map((item) => (
-              <div
+              <a
+                href="https://t.me/+BVe-_LRT7gAwYTAy"
+                target="_blank"
+                rel="noopener noreferrer"
                 key={item.id}
                 className={`plash ${
                   item.id === "1" || item.id === "2"
@@ -65,7 +68,7 @@ const Bonus = ({ className, title }) => {
                 } items-center justify-center py-[15px] text-white font-gil text-[14px] px-6`}
               >
                 <span>{item.title}</span>
-              </div>
+              </a>
             ))}
           </div>
           <img src={robot} alt="robot" className=" object-contain" />

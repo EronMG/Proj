@@ -36,7 +36,14 @@ const Footer = ({ className }) => {
         <img src={logo} alt="logo" />
         <div className="flex items-center gap-10">
           <img src={min} alt="icon" />
-          <img src={max} alt="icon" />
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://t.me/+BVe-_LRT7gAwYTAy"
+          >
+            {" "}
+            <img src={max} alt="icon" />
+          </a>
         </div>
       </div>
       <div className="flex flex-col gap-3">
