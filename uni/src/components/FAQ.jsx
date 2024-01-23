@@ -1,5 +1,4 @@
 import React, { useCallback, useState } from "react";
-import close from "../assets/close.svg";
 
 const quest = [
   {
@@ -66,7 +65,6 @@ const FAQ = ({ className, title }) => {
                   <span className="text-white text-[16px] font-gilSemi">
                     {item.name}
                   </span>
-                  <img src={close} alt="close" className="w-7 h-7" />
                 </div>
                 <span className="text-gray-400 font-gil text-[12px] pt-4">
                   {item.title}
@@ -79,7 +77,6 @@ const FAQ = ({ className, title }) => {
                   <span className="text-white text-[16px] font-gilSemi">
                     {item.name}
                   </span>
-                  <img src={close} alt="close" className="w-7 h-7" />
                 </div>
                 <span className="text-gray-400 font-gil text-[12px] pt-4">
                   {item.title}
@@ -101,7 +98,6 @@ const FAQ = ({ className, title }) => {
               <span className="text-white text-[16px] font-gilSemi md:text-xl xl:text-[32px]">
                 {item.name}
               </span>
-              <img src={close} alt="close" className="w-7 h-7" />
             </div>
             <span className="text-gray-400 font-gil text-[12px] pt-4 md:text-base">
               {item.title}
