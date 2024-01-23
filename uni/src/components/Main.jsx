@@ -20,7 +20,7 @@ const Main = ({ className, title }) => {
   return (
     <div className={className}>
       <div>
-        <h2 className="text-[32px] text-white font-jura font-bold leading-[120%] max-w-[752px]">
+        <h2 className="text-[32px] text-white font-jura font-bold leading-[120%] max-w-[752px] md:text-[48px]">
           {title}
         </h2>
         <div className="pt-6 flex flex-col gap-2">
@@ -29,7 +29,7 @@ const Main = ({ className, title }) => {
               key={item.id}
               className={`text-[13px] font-gilSemi leading-6 text-white ${
                 item.id === "1" ? " max-w-[458px] " : " max-w-[496px] "
-              }`}
+              } md:text-[16px]`}
             >
               <span className="text-primary">{item.span}</span>
               {item.paragraph}

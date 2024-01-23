@@ -46,7 +46,7 @@ const Sovet = ({ className, title }) => {
       <h2 className="text-white text-[30px] font-jura font-bold text-center">
         {title}
       </h2>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 sm:hidden">
         {slice.map((item) => (
           <div
             key={item.id}
@@ -64,6 +64,23 @@ const Sovet = ({ className, title }) => {
                   : "max-w-[224px]"
               }`}
             >
+              {item.title}
+            </span>
+          </div>
+        ))}
+      </div>
+      <div className=" flex-wrap gap-4 hidden sm:flex justify-center">
+        {sov.map((item) => (
+          <div
+            key={item.id}
+            className={`blockInf flex flex-col gap-4  py-2 px-2 sm:w-[300px] h-[175px]`}
+          >
+            <img
+              src={item.icon}
+              alt={item.id}
+              className="w-[35px] h-[35px] object-fit"
+            />
+            <span className={`text-[16px] text-white font-gil `}>
               {item.title}
             </span>
           </div>

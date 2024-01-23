@@ -5,6 +5,13 @@ import coin3 from "../assets/coin3.svg";
 import coin4 from "../assets/coin4.svg";
 import coin5 from "../assets/coin5.svg";
 import coin6 from "../assets/coin6.svg";
+import Mon1 from "../assets/Mon1.svg";
+import Mon2 from "../assets/Mon2.svg";
+import Mon3 from "../assets/Mon3.svg";
+import Mon4 from "../assets/Mon4.svg";
+import Mon5 from "../assets/Mon5.svg";
+import Mon6 from "../assets/Mon6.svg";
+
 import "../index.css";
 import arrow from "../assets/redarrow.svg";
 
@@ -76,6 +83,34 @@ const coins = [
     hourd: "311 879 314 $",
   },
 ];
+
+const COINS = [
+  {
+    id: "1",
+    icon: Mon1,
+  },
+  {
+    id: "2",
+    icon: Mon2,
+  },
+  {
+    id: "3",
+    icon: Mon3,
+  },
+  {
+    id: "4",
+    icon: Mon4,
+  },
+  {
+    id: "5",
+    icon: Mon5,
+  },
+  {
+    id: "6",
+    icon: Mon6,
+  },
+];
+
 const firstThreeCoins = coins.slice(0, 3);
 
 const Active = ({ className, title }) => {
@@ -85,7 +120,7 @@ const Active = ({ className, title }) => {
         {title}
       </h2>
       <div className="block">
-        <div className=" mt-8 px-4 py-5 flex flex-col gap-4">
+        <div className=" mt-8 px-4 py-5 flex flex-col gap-4 md:hidden">
           {firstThreeCoins.map((item) => (
             <div
               key={item.id}
@@ -148,6 +183,84 @@ const Active = ({ className, title }) => {
               </div>
             </div>
           ))}
+        </div>
+        <div className=" mt-8 px-4 py-5  flex-col gap-4 hidden md:flex ">
+          <div className="flex gap-3">
+            {COINS.map((item) => (
+              <img
+                src={item.icon}
+                alt="icon"
+                key={item.id}
+                className="w-[155px]"
+              />
+            ))}
+          </div>
+          <div className="flex flex-col gap-4 overflow-scroll h-[929px]">
+            {coins.map((item) => (
+              <div
+                key={item.id}
+                className={`flex flex-col gap-2 ${
+                  item.id === coins.length.toString()
+                    ? "border-b-[0px] "
+                    : "border-b-[1px] "
+                } border-gray-500 py-3`}
+              >
+                <div className="flex items-center gap-4">
+                  <img src={item.icon} alt={item.name} />
+                  <div className="flex items-center gap-3">
+                    <span className="text-white font-gil text-base">
+                      {item.name}
+                    </span>
+                    <span className="text-[#ACACAC] font-gil text-[12px]">
+                      {item.title}
+                    </span>
+                  </div>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <div className="flex items-center justify-between">
+                    <p className="text-white font-gilSemi text-[18px]">
+                      Цена в $
+                    </p>
+                    <span className="text-gray-400 font-gil text-[16px]">
+                      {item.dollar}
+                    </span>
+                  </div>
+                  <div className="flex items-center  justify-between">
+                    <p className="text-white font-gilSemi text-[18px]">
+                      Цена в ₽
+                    </p>
+                    <span className="text-gray-400 font-gil text-[16px]">
+                      {item.rub}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <p className="text-white font-gilSemi text-[18px]">
+                      7 дней
+                    </p>
+                    <span className="text-red font-gil text-[16px] flex">
+                      <img src={arrow} alt="arrow" /> {item.procent}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <p className="text-white font-gilSemi text-[18px] w-[120px]">
+                      Рыночная капитализация
+                    </p>
+                    <span className="text-gray-400 font-gil text-[16px]">
+                      {item.cap}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <p className="text-white font-gilSemi text-[18px] w-[120px]">
+                      Объем торгов за 24 часа
+                    </p>
+                    <span className="text-gray-400 font-gil text-[16px]">
+                      {item.hourd}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

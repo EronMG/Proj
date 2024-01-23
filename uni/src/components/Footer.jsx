@@ -41,11 +41,14 @@ const Footer = ({ className }) => {
       </div>
       <div className="flex flex-col gap-3">
         {links.map((item) => (
-          <span key={item.id} className="font-gil text-base text-white">
+          <span
+            key={item.id}
+            className="font-gil text-base text-white md:text-end"
+          >
             {item.name}
           </span>
         ))}
-        <span className="font-gil text-base text-white pt-3">
+        <span className="font-gil text-base text-white pt-3 md:text-end">
           нажимая на данные. должны открываться юр.документы
         </span>
       </div>

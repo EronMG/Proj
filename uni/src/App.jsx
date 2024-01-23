@@ -34,18 +34,18 @@ const App = () => {
         <Bonus
           title={"Инновации "}
           className={
-            "flex flex-col items-center justify-center gap-[16px] px-[20px]"
+            "flex flex-wrap items-center justify-center gap-[16px] px-[20px]"
           }
         />
         <Sovetniks className={"px-[20px]"} title={"Советники"} />
         <Partners
           className={
-            "partners flex items-center justify-center flex-col gap-8 px-[20px] pt-7 pb-4"
+            "partners flex items-center justify-center flex-col gap-8 px-[20px] pt-7 pb-4 mx-4 md:mx-0"
           }
           title={"Партнерская программа от Project Imperial"}
         />
         <Active
-          className={"flex flex-col gap-5"}
+          className={"flex flex-col gap-5 px-4"}
           title={"Активы которыми мы торгуем"}
         />
         <FAQ className={"px-4 flex flex-col gap-10 py-5"} title={"F.A.Q"} />
@@ -62,7 +62,11 @@ const App = () => {
           title={"Советы от Project Imperial"}
         />
       </div>
-      <Footer className={"flex flex-col gap-24 py-10 px-4"} />
+      <Footer
+        className={
+          "flex flex-wrap justify-center gap-24 py-10 px-4 md:justify-between"
+        }
+      />
     </>
   );
 };

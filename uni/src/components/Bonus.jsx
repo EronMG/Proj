@@ -49,18 +49,20 @@ const plash = [
 const Bonus = ({ className, title }) => {
   return (
     <div className={className}>
-      <div className="block pb-[33px] pt-8 px-4">
-        <h2 className="text-[32px] text-white font-jura font-bold">Бонусы</h2>
-        <div className="pt-9 flex items-center flex-wrap justify-center gap-8">
+      <div className="block pb-[33px] pt-8 px-4 w-full md:w-[600px]">
+        <h2 className="text-[32px] text-white font-jura font-bold md:text-[48px]">
+          Бонусы
+        </h2>
+        <div className="pt-9 flex items-center flex-wrap justify-center gap-8 md:justify-normal">
           <div className="flex flex-col gap-6">
             {plash.map((item) => (
               <div
                 key={item.id}
                 className={`plash ${
                   item.id === "1" || item.id === "2"
-                    ? "max-w-[265px]"
+                    ? "max-w-[265px] md:w-[180px]"
                     : "max-w-[167px]"
-                } items-center justify-center py-[15px] text-white font-gil text-base px-6`}
+                } items-center justify-center py-[15px] text-white font-gil text-[14px] px-6`}
               >
                 <span>{item.title}</span>
               </div>
@@ -69,8 +71,10 @@ const Bonus = ({ className, title }) => {
           <img src={robot} alt="robot" className=" object-contain" />
         </div>
       </div>
-      <div className="block max-w-[880px] px-4 py-6">
-        <h2 className="text-[32px] font-jura font-bold text-white">{title}</h2>
+      <div className="block max-w-[880px] px-4 py-6 md:w-[400px]">
+        <h2 className="text-[32px] font-jura font-bold text-white md:text-[48px]">
+          {title}
+        </h2>
         <div className=" flex flex-wrap pt-10 gap-y-8 gap-x-10 justify-center">
           {sov.map((item) => (
             <div

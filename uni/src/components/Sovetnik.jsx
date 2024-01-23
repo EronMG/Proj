@@ -27,15 +27,17 @@ const sov = [
 const Sovetnik = ({ className, title }) => {
   return (
     <div className={className}>
-      <div className="block pb-[33px] pt-9 px-4 max-w-[880px]">
-        <h2 className="text-[32px] font-jura font-bold text-white">{title}</h2>
-        <div className=" flex flex-wrap pt-10 gap-y-8 gap-x-10 justify-center">
+      <div className="block pb-[33px] pt-9 px-4 max-w-[880px] md:h-[551px]">
+        <h2 className="text-[32px] font-jura font-bold text-white md:text-[41px]">
+          {title}
+        </h2>
+        <div className=" flex flex-wrap pt-10 gap-y-8 gap-x-10 justify-center md:justify-normal md:gap-x-4">
           {sov.map((item) => (
             <div
               key={item.id}
               className={`${
                 item.id === "1" || item.id === "3" ? "pl-2" : "pl-2"
-              } blockInf flex flex-col gap-4 h-[168px] pt-2 w-[246px]`}
+              } blockInf flex flex-col gap-4 h-[168px] pt-2 w-[246px] sm:w-[266px]`}
             >
               <p className="text-[20px] font-gilSemi text-white">{item.name}</p>
               <span
@@ -49,8 +51,8 @@ const Sovetnik = ({ className, title }) => {
           ))}
         </div>
       </div>
-      <div className="block px-[99px] pb-[60px] py-[77px] h-[551px] hidden">
-        <img src={icon} alt="human" />
+      <div className="block  h-[551px] hidden md:flex md:min-w-[400px] md:">
+        <img src={icon} alt="human" className=" object-contain" />
       </div>
     </div>
   );
