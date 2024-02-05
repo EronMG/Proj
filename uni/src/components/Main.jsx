@@ -38,7 +38,7 @@ const Main = ({ className, title }) => {
           ))}
         </div>
         <Link
-          to="/form"
+          to="/login"
           className="button max-w-[260px] mt-[48px] text-[14px] font-gil text-white flex items-center justify-center px-[12px] gap-4 h-[56px]"
         >
           <img src={arrow} alt="arrow" /> Подробнее о советниках

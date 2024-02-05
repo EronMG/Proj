@@ -119,7 +119,7 @@ const Settings = () => {
       <header className="flex flex-col items-center px-2 pt-10 sm:hidden">
         <img src={logo} alt="logo" />
         <div className="flex gap-10">
-          <Link to="/main" className=" font-gil text-[18px] text-white">
+          <Link to="/" className=" font-gil text-[18px] text-white">
             Перейти к лендингу
           </Link>
           <Link
@@ -131,7 +131,7 @@ const Settings = () => {
         </div>
       </header>
       <header className="hidden sm:flex items-center justify-between w-full mt-10 px-10">
-        <Link to="/main" className=" font-gil text-[22px] text-white">
+        <Link to="/" className=" font-gil text-[22px] text-white">
           Перейти к лендингу
         </Link>
         <img src={logo} alt="logo" />
